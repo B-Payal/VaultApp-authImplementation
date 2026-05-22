@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
     const storedToken=localStorage.getItem('authToken');
     if(storedToken && storedUser){
       setToken(storedToken)
-      setUser(JSON.stringify(storedUser))
+      setUser(JSON.parse(storedUser))
     }
   }, [])
   // BUG 2 (Part 2): Missing useEffect to load user from localStorage on mount
